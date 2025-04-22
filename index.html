@@ -4,30 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Muméro Mistère</title>
+    <title>Jeu de devinette</title>
 </head>
 <body>
-    <div class="container">
-        <div class="container_wrapper">
-            <button type"button" class="btn btn_again">Jouer Encore !</button>
-            <p>Entre 1 et 10</p>
+    <div class="game-container">
+        <h1>Jeu de Devinette</h1>
+        <label for="difficulty">Choisissez la difficulté :</label>
+        <select id="difficulty">
+          <option value="easy">Facile (1-10, 3 essais)</option>
+          <option value="medium">Moyen (1-50, 2 essais)</option>
+          <option value="hard">Difficile (1-100, 1 essai)</option>
+        </select>
+    
+        <div id="input-area">
+          <input type="number" id="userInput" placeholder="Entrez un nombre" />
+          <button id="submitBtn">Valider</button>
         </div>
-        <h2>Mumero Mistère</h2>
-        <p class="cacher_num">?</p>
-        <p class="message">Commencer............</p>
-
-        <div class="number_data">
-            <form>
-                <input type="number" placeholder="Enter Your Lucky Number!" class="input_number">
-                <button type="button" class="btn btn_check">Check Now!</button>
-            </form>
-            <div class="content">
-                <p>Score <span class="score">20</span></p>
-                <p>High Score: <span class="High_score">20</span></p>
-            </div>
-        </div>
-
-    </div>
+    
+        <div id="message" class="fade"></div>
+        <div id="attempts"></div>
+        <button id="restartBtn" style="display:none;">Rejouer</button>
+      </div>
     
 </body>
+<script src="./script.js"></script>
 </html>
